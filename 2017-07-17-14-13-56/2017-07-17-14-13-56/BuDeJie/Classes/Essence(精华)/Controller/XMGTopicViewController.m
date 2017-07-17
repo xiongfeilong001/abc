@@ -7,11 +7,11 @@
 //
 
 #import "XMGTopicViewController.h"
-#import <MJExtension.h>
+#import "MJExtension.h"
 #import "XMGTopic.h"
-#import <SVProgressHUD.h>
+#import "SVProgressHUD.h"
 #import "XMGTopicCell.h"
-#import <SDImageCache.h>
+#import "SDImageCache.h"
 #import "XMGRefreshHeader.h"
 #import "XMGTestHeader.h"
 #import "XMGDIYHeader.h"

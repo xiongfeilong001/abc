@@ -8,7 +8,7 @@
 
 #import "XMGTopicPictureView.h"
 #import "XMGTopic.h"
-#import <UIImageView+WebCache.h>
+#import "UIImageView+WebCache.h"
 #import "XMGSeeBigPictureViewController.h"
 
 @interface XMGTopicPictureView()

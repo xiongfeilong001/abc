@@ -8,8 +8,8 @@
 
 #import "XMGTopicVideoView.h"
 #import "XMGTopic.h"
-#import <UIImageView+WebCache.h>
-#import <AFNetworking.h>
+#import "UIImageView+WebCache.h"
+#import "AFNetworking.h"
 #import "XMGSeeBigPictureViewController.h"
 
 @interface XMGTopicVideoView()

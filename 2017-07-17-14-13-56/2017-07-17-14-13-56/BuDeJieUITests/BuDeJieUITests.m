@@ -6,7 +6,7 @@
 //  Copyright © 2016年 小码哥. All rights reserved.
 //
 
-#import <XCTest/XCTest.h>
+#import "XCTest.h"
 
 @interface BuDeJieUITests : XCTestCase
 

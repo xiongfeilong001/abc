@@ -8,7 +8,7 @@
 
 #import "XMGTopicCell.h"
 #import "XMGTopic.h"
-#import <UIImageView+WebCache.h>
+#import "UIImageView+WebCache.h"
 
 #import "XMGTopicPictureView.h"
 #import "XMGTopicVideoView.h"

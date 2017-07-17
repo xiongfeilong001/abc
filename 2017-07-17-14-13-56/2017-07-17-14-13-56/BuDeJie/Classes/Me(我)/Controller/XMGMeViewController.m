@@ -8,9 +8,9 @@
 
 #import "XMGMeViewController.h"
 #import "XMGSettingViewController.h"
-#import <AFNetworking/AFNetworking.h>
+#import "AFNetworking.h"
 #import "XMGSquareItem.h"
-#import <MJExtension/MJExtension.h>
+#import "MJExtension.h"
 #import "XMGSquareCell.h"
 #import "XMGWebViewController.h"
 /*

@@ -7,7 +7,7 @@
 //
 
 #import "XMGSubTagCell.h"
-#import <UIImageView+WebCache.h>
+#import "UIImageView+WebCache.h"
 #import "XMGSubTagItem.h"
 #import "UIImage+Antialias.h"
 @interface XMGSubTagCell ()

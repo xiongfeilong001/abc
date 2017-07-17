@@ -7,7 +7,7 @@
 //
 
 #import "XMGSquareCell.h"
-#import <UIImageView+WebCache.h>
+#import "UIImageView+WebCache.h"
 #import "XMGSquareItem.h"
 @interface XMGSquareCell ()
 @property (weak, nonatomic) IBOutlet UIImageView *iconView;

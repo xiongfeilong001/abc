@@ -8,7 +8,7 @@
 
 #import "XMGSeeBigPictureViewController.h"
 #import "XMGTopic.h"
-#import <SVProgressHUD.h>
+#import "SVProgressHUD.h"
 #import <Photos/Photos.h>
 
 @interface XMGSeeBigPictureViewController () <UIScrollViewDelegate>

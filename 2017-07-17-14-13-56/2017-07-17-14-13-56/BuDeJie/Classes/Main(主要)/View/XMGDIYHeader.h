@@ -6,7 +6,7 @@
 //  Copyright © 2016年 小码哥. All rights reserved.
 //
 
-#import <MJRefresh/MJRefresh.h>
+#import "MJRefresh.h"
 
 @interface XMGDIYHeader : MJRefreshHeader
 

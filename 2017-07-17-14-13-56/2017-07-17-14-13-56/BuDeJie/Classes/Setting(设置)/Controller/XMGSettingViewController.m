@@ -7,9 +7,9 @@
 //
 
 #import "XMGSettingViewController.h"
-#import <SDImageCache.h>
+#import "SDImageCache.h"
 #import "XMGFileTool.h"
-#import <SVProgressHUD/SVProgressHUD.h>
+#import "SVProgressHUD.h"
 #define CachePath [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) firstObject]
 
 @interface XMGSettingViewController ()

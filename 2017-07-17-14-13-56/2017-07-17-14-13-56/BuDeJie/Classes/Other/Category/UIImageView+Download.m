@@ -7,8 +7,8 @@
 //
 
 #import "UIImageView+Download.h"
-#import <AFNetworkReachabilityManager.h>
-#import <UIImageView+WebCache.h>
+#import "AFNetworkReachabilityManager.h"
+#import "UIImageView+WebCache.h"
 
 @implementation UIImageView (Download)
 - (void)xmg_setOriginImage:(NSString *)originImageURL thumbnailImage:(NSString *)thumbnailImageURL placeholder:(UIImage *)placeholder completed:(SDWebImageCompletionBlock)completedBlock

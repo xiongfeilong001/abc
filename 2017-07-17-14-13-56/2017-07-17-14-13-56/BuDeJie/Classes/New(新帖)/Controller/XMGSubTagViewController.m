@@ -33,11 +33,11 @@
  */
 
 #import "XMGSubTagViewController.h"
-#import <AFNetworking/AFNetworking.h>
+#import "AFNetworking.h"
 #import "XMGSubTagItem.h"
-#import <MJExtension/MJExtension.h>
+#import "MJExtension.h"
 #import "XMGSubTagCell.h"
-#import <SVProgressHUD/SVProgressHUD.h>
+#import "SVProgressHUD.h"
 #import "XMGRefreshHeader.h"
 #import "XMGDIYHeader.h"
 

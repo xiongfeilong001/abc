@@ -10,7 +10,6 @@
 		700334B01C92758C00B04292 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 700334AE1C92758C00B04292 /* Main.storyboard */; };
 		700334B21C92758C00B04292 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 700334B11C92758C00B04292 /* Assets.xcassets */; };
 		700334B51C92758C00B04292 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 700334B31C92758C00B04292 /* LaunchScreen.storyboard */; };
-		700334C01C92758C00B04292 /* BuDeJieUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 700334BF1C92758C00B04292 /* BuDeJieUITests.m */; };
 		700334E31C92A96D00B04292 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 700334DD1C92A96D00B04292 /* AppDelegate.m */; };
 		700334E41C92A96D00B04292 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 700334DE1C92A96D00B04292 /* main.m */; };
 		700334E71C92A9BC00B04292 /* XMGEssenceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 700334E61C92A9BC00B04292 /* XMGEssenceViewController.m */; };
@@ -110,8 +109,6 @@
 		700334B41C92758C00B04292 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		700334B61C92758C00B04292 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		700334BB1C92758C00B04292 /* BuDeJieUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BuDeJieUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		700334BF1C92758C00B04292 /* BuDeJieUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BuDeJieUITests.m; sourceTree = "<group>"; };
-		700334C11C92758C00B04292 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		700334DC1C92A96D00B04292 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		700334DD1C92A96D00B04292 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		700334DE1C92A96D00B04292 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -275,7 +272,6 @@
 			isa = PBXGroup;
 			children = (
 				700334A41C92758C00B04292 /* BuDeJie */,
-				700334BE1C92758C00B04292 /* BuDeJieUITests */,
 				700334A31C92758C00B04292 /* Products */,
 				9F39416B41F040E570DAA02F /* Pods */,
 				864571F022EED76A273ED33E /* Frameworks */,
@@ -310,15 +306,6 @@
 				70CB98331C940868003A01DD /* 启动图片 */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		700334BE1C92758C00B04292 /* BuDeJieUITests */ = {
-			isa = PBXGroup;
-			children = (
-				700334BF1C92758C00B04292 /* BuDeJieUITests.m */,
-				700334C11C92758C00B04292 /* Info.plist */,
-			);
-			path = BuDeJieUITests;
 			sourceTree = "<group>";
 		};
 		700334CA1C92A96D00B04292 /* Classes */ = {
@@ -1028,7 +1015,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				700334C01C92758C00B04292 /* BuDeJieUITests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

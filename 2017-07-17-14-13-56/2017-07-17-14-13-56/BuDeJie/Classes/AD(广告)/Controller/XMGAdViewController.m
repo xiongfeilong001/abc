@@ -7,10 +7,10 @@
 //
 
 #import "XMGAdViewController.h"
-#import <AFNetworking/AFNetworking.h>
+#import "AFNetworking.h"
 #import "XMGADItem.h"
-#import <MJExtension/MJExtension.h>
-#import <UIImageView+WebCache.h>
+#import "MJExtension.h"
+#import "UIImageView+WebCache.h"
 #import "XMGTabBarController.h"
 /*
     1.广告业务逻辑
