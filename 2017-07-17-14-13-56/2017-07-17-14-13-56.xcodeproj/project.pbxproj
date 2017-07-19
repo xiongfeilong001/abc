@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8F3FC80B1F1F582D00AFF6B0 /* My_tableview_header_refresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F3FC80A1F1F582D00AFF6B0 /* My_tableview_header_refresh.m */; };
+		8F42A4251F1DEFCB00CDB82E /* NSObject+Model.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F42A4241F1DEFCB00CDB82E /* NSObject+Model.m */; };
 		8F463A3B1F1C8DF800EE781F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8F4638381F1C8DF600EE781F /* Assets.xcassets */; };
 		8F463A3C1F1C8DF800EE781F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F4638391F1C8DF600EE781F /* LaunchScreen.storyboard */; };
 		8F463A3D1F1C8DF800EE781F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F46383B1F1C8DF600EE781F /* Main.storyboard */; };
@@ -220,6 +222,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8F3FC8091F1F582D00AFF6B0 /* My_tableview_header_refresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = My_tableview_header_refresh.h; sourceTree = "<group>"; };
+		8F3FC80A1F1F582D00AFF6B0 /* My_tableview_header_refresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = My_tableview_header_refresh.m; sourceTree = "<group>"; };
+		8F42A4231F1DEFCB00CDB82E /* NSObject+Model.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Model.h"; sourceTree = "<group>"; };
+		8F42A4241F1DEFCB00CDB82E /* NSObject+Model.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Model.m"; sourceTree = "<group>"; };
 		8F4638381F1C8DF600EE781F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8F46383A1F1C8DF600EE781F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8F46383C1F1C8DF600EE781F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -993,6 +999,8 @@
 		8F4638B41F1C8DF600EE781F /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				8F42A4231F1DEFCB00CDB82E /* NSObject+Model.h */,
+				8F42A4241F1DEFCB00CDB82E /* NSObject+Model.m */,
 				8F4638B51F1C8DF600EE781F /* UIBarButtonItem+Item.h */,
 				8F4638B61F1C8DF600EE781F /* UIBarButtonItem+Item.m */,
 				8F4638B71F1C8DF600EE781F /* UIImage+Antialias.h */,
@@ -1005,6 +1013,8 @@
 				8F4638BE1F1C8DF600EE781F /* UITextField+Placeholder.m */,
 				8F4638BF1F1C8DF600EE781F /* UIView+Frame.h */,
 				8F4638C01F1C8DF600EE781F /* UIView+Frame.m */,
+				8F3FC8091F1F582D00AFF6B0 /* My_tableview_header_refresh.h */,
+				8F3FC80A1F1F582D00AFF6B0 /* My_tableview_header_refresh.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -1899,6 +1909,7 @@
 				8F463D9B1F1C9C6200EE781F /* MJRefreshBackStateFooter.m in Sources */,
 				8F463DAC1F1C9C6200EE781F /* SDWebImageDownloaderOperation.m in Sources */,
 				8F463DA41F1C9C6200EE781F /* README.md in Sources */,
+				8F42A4251F1DEFCB00CDB82E /* NSObject+Model.m in Sources */,
 				8F463D911F1C9C6200EE781F /* MJRefreshAutoFooter.m in Sources */,
 				8F463D951F1C9C6200EE781F /* MJRefreshHeader.m in Sources */,
 				8F463DB91F1C9C6200EE781F /* SVProgressHUD.m in Sources */,
@@ -1920,6 +1931,7 @@
 				8F463D751F1C9C6200EE781F /* AFURLRequestSerialization.m in Sources */,
 				8F463A441F1C8DF800EE781F /* XMGSeeBigPictureViewController.m in Sources */,
 				8F463DC31F1C9C6200EE781F /* Pods-dummy.m in Sources */,
+				8F3FC80B1F1F582D00AFF6B0 /* My_tableview_header_refresh.m in Sources */,
 				8F463A771F1C8DF800EE781F /* UITextField+Placeholder.m in Sources */,
 				8F463A631F1C8DF800EE781F /* XMGTabBar.m in Sources */,
 				8F463DA81F1C9C6200EE781F /* SDImageCache.m in Sources */,

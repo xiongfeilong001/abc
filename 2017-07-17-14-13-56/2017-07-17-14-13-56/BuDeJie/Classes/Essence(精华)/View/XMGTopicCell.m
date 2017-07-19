@@ -42,6 +42,7 @@
 {
     if (!_pictureView) {
         XMGTopicPictureView *pictureView = [XMGTopicPictureView xmg_viewFromXib];
+        pictureView.backgroundColor = [UIColor cyanColor];
         [self.contentView addSubview:pictureView];
         _pictureView = pictureView;
     }
@@ -114,7 +115,7 @@
         self.videoView.hidden = YES;
     } else if (topic.type == XMGTopicTypeVoice) { // 声音
         self.pictureView.hidden = YES;
-        self.voiceView.hidden = YES;
+        self.voiceView.hidden = NO;
         self.voiceView.topic = topic;
         self.videoView.hidden = YES;
     } else if (topic.type == XMGTopicTypeVideo) { // 视频

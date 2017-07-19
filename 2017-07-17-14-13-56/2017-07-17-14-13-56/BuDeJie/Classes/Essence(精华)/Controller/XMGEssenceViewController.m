@@ -21,9 +21,12 @@
 /** 标题栏 */
 @property (nonatomic, weak) UIView *titlesView;
 /** 标题下划线 */
-@property (nonatomic, weak) UIView *titleUnderline;
+@property (nonatomic, weak)     UIView *titleUnderline;
 /** 上一次点击的标题按钮 */
 @property (nonatomic, weak) XMGTitleButton *previousClickedTitleButton;
+
+/**子控制器标题*/
+@property(nonatomic,strong)NSMutableArray *vc_title;
 @end
 
 @implementation XMGEssenceViewController
@@ -52,11 +55,31 @@
  */
 - (void)setupAllChildVcs
 {
-    [self addChildViewController:[[XMGVoiceViewController alloc] init]];
-    [self addChildViewController:[[XMGAllViewController alloc] init]];
-    [self addChildViewController:[[XMGVideoViewController alloc] init]];
-    [self addChildViewController:[[XMGPictureViewController alloc] init]];
-    [self addChildViewController:[[XMGWordViewController alloc] init]];
+    [_vc_title removeAllObjects];
+    _vc_title = [NSMutableArray array];
+    
+    UIViewController *vc_all = [[XMGAllViewController alloc] init];
+    vc_all.title = @"全部";
+    UIViewController *vc_video = [[XMGVideoViewController alloc] init];
+    vc_video.title = @"视频";
+    UIViewController *vc_picture = [[XMGPictureViewController alloc] init];
+    vc_picture.title = @"图片";
+    UIViewController *vc_voice = [[XMGVoiceViewController alloc] init];
+    vc_voice.title = @"声音";
+    UIViewController *vc_word = [[XMGWordViewController alloc] init];
+    vc_word.title = @"段子";
+    
+    [_vc_title addObject:vc_all.title];
+    [_vc_title addObject:vc_video.title];
+    [_vc_title addObject:vc_picture.title];
+    [_vc_title addObject:vc_voice.title];
+    [_vc_title addObject:vc_word.title];
+    
+    [self addChildViewController:vc_all];
+    [self addChildViewController:vc_video];
+    [self addChildViewController:vc_picture];
+    [self addChildViewController:vc_voice];
+    [self addChildViewController:vc_word];
 }
 
 /**
@@ -66,10 +89,10 @@
 {
     // 左边按钮
     // 把UIButton包装成UIBarButtonItem.就导致按钮点击区域扩大
-    self.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithimage:[UIImage imageNamed:@"nav_item_game_icon"] highImage:[UIImage imageNamed:@"nav_item_game_click_icon"] target:self action:@selector(game)];
+    self.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithimage:[UIImage imageNamed:@"navigationButtonReturnClick"] highImage:[UIImage imageNamed:@"navigationButtonReturnClick"] target:self action:@selector(game)];
     
     // 右边按钮
-    self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemWithimage:[UIImage imageNamed:@"navigationButtonRandom"] highImage:[UIImage imageNamed:@"navigationButtonRandomClick"] target:nil action:nil];
+    self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemWithimage:[UIImage imageNamed:@"friendsRecommentIcon-click"] highImage:[UIImage imageNamed:@"friendsRecommentIcon-click"] target:self action:@selector(game)];
     
     // titleView
     self.navigationItem.titleView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"MainTitle"]];
@@ -84,7 +107,7 @@
     self.automaticallyAdjustsScrollViewInsets = NO;
     
     UIScrollView *scrollView = [[UIScrollView alloc] init];
-    scrollView.backgroundColor = [UIColor blueColor];
+    scrollView.backgroundColor = [UIColor blackColor];
     scrollView.frame = self.view.bounds;
     scrollView.delegate = self;
     scrollView.showsHorizontalScrollIndicator = NO;
@@ -107,6 +130,7 @@
 {
     UIView *titlesView = [[UIView alloc] init];
     titlesView.backgroundColor = [[UIColor whiteColor] colorWithAlphaComponent:0.5];
+    
     titlesView.frame = CGRectMake(0, XMGNavMaxY, self.view.xmg_width, XMGTitlesViewH);
     [self.view addSubview:titlesView];
     self.titlesView = titlesView;
@@ -124,23 +148,22 @@
 - (void)setupTitleButtons
 {
     // 文字
-    NSArray *titles = @[@"声音", @"全部", @"视频", @"图片", @"段子"];
-    NSUInteger count = titles.count;
-    
     // 标题按钮的尺寸
-    CGFloat titleButtonW = self.titlesView.xmg_width / count;
+    CGFloat titleButtonW = self.titlesView.xmg_width / _vc_title.count;
     CGFloat titleButtonH = self.titlesView.xmg_height;
     
     // 创建5个标题按钮
-    for (NSUInteger i = 0; i < count; i++) {
+    for (NSUInteger i = 0; i < _vc_title.count; i++) {
         XMGTitleButton *titleButton = [[XMGTitleButton alloc] init];
         titleButton.tag = i;
+        
+        titleButton.backgroundColor = [UIColor greenColor];
         [titleButton addTarget:self action:@selector(titleButtonClick:) forControlEvents:UIControlEventTouchUpInside];
         [self.titlesView addSubview:titleButton];
         // frame
         titleButton.frame = CGRectMake(i * titleButtonW, 0, titleButtonW, titleButtonH);
         // 文字
-        [titleButton setTitle:titles[i] forState:UIControlStateNormal];
+        [titleButton setTitle:_vc_title[i] forState:UIControlStateNormal];
     }
 }
 
@@ -202,7 +225,8 @@
         
         // 滚动scrollView
         CGFloat offsetX = self.scrollView.xmg_width * index;
-        self.scrollView.contentOffset = CGPointMake(offsetX, self.scrollView.contentOffset.y);
+        self.scrollView.contentOffset = CGPointMake(offsetX, 0.f);
+        
     } completion:^(BOOL finished) {
         // 添加子控制器的view
         [self addChildVcViewIntoScrollView:index];
@@ -216,6 +240,7 @@
         
         UIScrollView *scrollView = (UIScrollView *)childVc.view;
         if (![scrollView isKindOfClass:[UIScrollView class]]) continue;
+        
         
         scrollView.scrollsToTop = (i == index);
     }
@@ -260,5 +285,9 @@
     childVcView.frame = CGRectMake(index * scrollViewW, 0, scrollViewW, self.scrollView.xmg_height);
     // 添加子控制器的view到scrollView中
     [self.scrollView addSubview:childVcView];
+}
+
+- (void)dealloc{
+    NSLog(@". . . .. . 精华这 大块 挂了 . . .. . . . ");
 }
 @end

@@ -12,8 +12,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
- 
-    [self.view addSubview:[[UISwitch alloc] init]];
 }
 
 - (XMGTopicType)type

@@ -19,6 +19,7 @@
 #import "UIImageView+Download.h"
 #import "XMGConst.h"
 #import "UIImage+Image.h"
+#import "NSObject+Model.h"
 
 // #filename -> "filename"
 // @#filename -> @"filename"

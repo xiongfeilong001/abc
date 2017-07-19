@@ -61,7 +61,7 @@
 
 - (void)placeSubviews
 {
-    [super placeSubviews];
+//    [super placeSubviews];
     
     if (self.stateLabel.constraints.count) return;
     

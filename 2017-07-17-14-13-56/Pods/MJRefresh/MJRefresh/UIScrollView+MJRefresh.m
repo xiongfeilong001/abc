@@ -67,6 +67,7 @@ static const char MJRefreshFooterKey = '\0';
     }
 }
 
+
 - (MJRefreshFooter *)mj_footer
 {
     return objc_getAssociatedObject(self, &MJRefreshFooterKey);

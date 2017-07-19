@@ -9,5 +9,5 @@
 #import "MJRefresh.h"
 
 @interface XMGDIYHeader : MJRefreshHeader
-
+@property(nonatomic,weak) UILabel *title_lbn;
 @end

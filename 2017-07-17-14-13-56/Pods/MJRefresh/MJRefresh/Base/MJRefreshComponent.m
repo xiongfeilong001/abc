@@ -35,13 +35,13 @@
     // 基本属性
     self.autoresizingMask = UIViewAutoresizingFlexibleWidth;
     self.backgroundColor = [UIColor clearColor];
+    
 }
 
 - (void)layoutSubviews
 {
     [super layoutSubviews];
-    
-    [self placeSubviews];
+//    [self placeSubviews];
 }
 
 - (void)placeSubviews{}
@@ -114,6 +114,7 @@
     
     // 看不见
     if (self.hidden) return;
+    
     if ([keyPath isEqualToString:MJRefreshKeyPathContentOffset]) {
         [self scrollViewContentOffsetDidChange:change];
     } else if ([keyPath isEqualToString:MJRefreshKeyPathPanState]) {
@@ -139,6 +140,7 @@
     [UIView animateWithDuration:MJRefreshFastAnimationDuration animations:^{
         self.alpha = 1.0;
     }];
+    
     self.pullingPercent = 1.0;
     // 只要正在刷新，就完全显示
     if (self.window) {
@@ -217,10 +219,10 @@
 {
     UILabel *label = [[self alloc] init];
     label.font = MJRefreshLabelFont;
-    label.textColor = MJRefreshLabelTextColor;
+    label.textColor = [UIColor purpleColor];
     label.autoresizingMask = UIViewAutoresizingFlexibleWidth;
     label.textAlignment = NSTextAlignmentCenter;
-    label.backgroundColor = [UIColor clearColor];
+    label.backgroundColor = [UIColor cyanColor];
     return label;
 }
 @end

@@ -12,7 +12,10 @@
 
 + (instancetype)xmg_viewFromXib
 {
-    return [[NSBundle mainBundle] loadNibNamed:NSStringFromClass(self) owner:nil options:nil].firstObject;
+//    return [[NSBundle mainBundle] loadNibNamed:NSStringFromClass([self class]) owner:nil options:nil].firstObject;
+
+    
+    return [[[NSBundle mainBundle] loadNibNamed:NSStringFromClass(self) owner:nil options:nil]lastObject];
 }
 
 - (void)setXmg_height:(CGFloat)xmg_height

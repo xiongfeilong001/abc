@@ -18,29 +18,42 @@
     
     // 获得原图（SDWebImage的图片缓存是用图片的url字符串作为key）
     UIImage *originImage = [[SDImageCache sharedImageCache] imageFromDiskCacheForKey:originImageURL];
+//    originImage = nil;
     if (originImage) { // 原图已经被下载过
         [self sd_setImageWithURL:[NSURL URLWithString:originImageURL] placeholderImage:placeholder completed:completedBlock];
     } else { // 原图并未下载过
-        if (mgr.isReachableViaWiFi) {
+        
+        //如果有网
+        if (mgr.isReachableViaWiFi || mgr.isReachableViaWWAN) {
             [self sd_setImageWithURL:[NSURL URLWithString:originImageURL] placeholderImage:placeholder completed:completedBlock];
-        } else if (mgr.isReachableViaWWAN) {
-            // 3G\4G网络下时候要下载原图
-            BOOL downloadOriginImageWhen3GOr4G = YES;
-            if (downloadOriginImageWhen3GOr4G) {
-                [self sd_setImageWithURL:[NSURL URLWithString:originImageURL] placeholderImage:placeholder completed:completedBlock];
-            } else {
-                [self sd_setImageWithURL:[NSURL URLWithString:thumbnailImageURL] placeholderImage:placeholder completed:completedBlock];
-            }
-        } else { // 没有可用网络
-            UIImage *thumbnailImage = [[SDImageCache sharedImageCache] imageFromDiskCacheForKey:thumbnailImageURL];
-            if (thumbnailImage) { // 缩略图已经被下载过
-                [self sd_setImageWithURL:[NSURL URLWithString:thumbnailImageURL] placeholderImage:placeholder completed:completedBlock];
-            } else { // 没有下载过任何图片
-                // 占位图片;
-                [self sd_setImageWithURL:nil placeholderImage:placeholder completed:completedBlock];
-            }
         }
+        
+        //        else if (mgr.isReachableViaWWAN) {
+        //            // 3G\4G网络下时候要下载原图
+        //            BOOL downloadOriginImageWhen3GOr4G = YES;
+        //            if (downloadOriginImageWhen3GOr4G) {
+        //                [self sd_setImageWithURL:[NSURL URLWithString:originImageURL] placeholderImage:placeholder completed:completedBlock];
+        //            }
+        
+        
+        else {// 没有可用网络
+            [self sd_setImageWithURL:[NSURL URLWithString:thumbnailImageURL] placeholderImage:placeholder completed:completedBlock];
+        }
+        
     }
+    
+//    else { // 没有可用网络
+//        UIImage *thumbnailImage = [[SDImageCache sharedImageCache] imageFromDiskCacheForKey:thumbnailImageURL];
+//        if (thumbnailImage) { // 缩略图已经被下载过
+//            [self sd_setImageWithURL:[NSURL URLWithString:thumbnailImageURL] placeholderImage:placeholder completed:completedBlock];
+//        } else { // 没有下载过任何图片
+//            // 占位图片;
+//            [self sd_setImageWithURL:nil placeholderImage:placeholder completed:completedBlock];
+//        }
+//    }
+    
+    
+
 }
 
 //- (void)xmg_setOriginImage:(NSString *)originImageURL thumbnailImage:(NSString *)thumbnailImageURL placeholder:(UIImage *)placeholder completed:(SDWebImageCompletionBlock)completedBlock
@@ -52,7 +65,7 @@
 //    if (originImage) { // 原图已经被下载过
 ////        self.image = originImage;
 ////        completedBlock(originImage, nil, 0, [NSURL URLWithString:originImageURL]);
-//        
+//
 //        [self sd_setImageWithURL:[NSURL URLWithString:originImageURL] placeholderImage:placeholder completed:completedBlock];
 //    } else { // 原图并未下载过
 //        if (mgr.isReachableViaWiFi) {
@@ -91,6 +104,6 @@
         self.image = [image xmg_circleImage];
     }];
     
-//    [self sd_setImageWithURL:[NSURL URLWithString:headerUrl] placeholderImage:[UIImage imageNamed:@"defaultUserIcon"]];
+    //    [self sd_setImageWithURL:[NSURL URLWithString:headerUrl] placeholderImage:[UIImage imageNamed:@"defaultUserIcon"]];
 }
 @end

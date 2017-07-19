@@ -22,9 +22,11 @@
 
 - (void)awakeFromNib
 {
+    [super awakeFromNib];
     self.autoresizingMask = UIViewAutoresizingNone;
     
     self.imageView.userInteractionEnabled = YES;
+    
     [self.imageView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(seeBigPicture)]];
 }
 
@@ -37,7 +39,7 @@
     vc.topic = self.topic;
     [self.window.rootViewController presentViewController:vc animated:YES completion:nil];
     
-//    [UIApplication sharedApplication].keyWindow.rootViewController;
+    //    [UIApplication sharedApplication].keyWindow.rootViewController;
 }
 
 - (void)setTopic:(XMGTopic *)topic
@@ -46,38 +48,29 @@
     
     // 设置图片
     self.placeholderView.hidden = NO;
+
+    
+    // 点击查看大图
     
     [self.imageView xmg_setOriginImage:topic.image1 thumbnailImage:topic.image0 placeholder:nil completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
         if (!image) return;
-        
         self.placeholderView.hidden = YES;
         
-        // 处理超长图片的大小
-        if (topic.isBigPicture) {
-            CGFloat imageW = topic.middleFrame.size.width;
-            CGFloat imageH = imageW * topic.height / topic.width;
-            
-            // 开启上下文
-            UIGraphicsBeginImageContext(CGSizeMake(imageW, imageH));
-            // 绘制图片到上下文中
-            [self.imageView.image drawInRect:CGRectMake(0, 0, imageW, imageH)];
-            self.imageView.image = UIGraphicsGetImageFromCurrentImageContext();
-            // 关闭上下文
-            UIGraphicsEndImageContext();
-        }
+        // gif
+        self.gifView.hidden = !topic.is_gif;
     }];
     
-    // gif
-    self.gifView.hidden = !topic.is_gif;
     
-    // 点击查看大图
+    
     if (topic.isBigPicture) { // 超长图
+//        NSLog(@".. . . 它是 大 图高有%f",topic.middleFrame.size.height);
         self.seeBigPictureButton.hidden = NO;
         self.imageView.contentMode = UIViewContentModeTop;
         self.imageView.clipsToBounds = YES;
     } else {
+//        NSLog(@".. . . 它是 小 图高有%f   %@    %f  %f  ",topic.middleFrame.size.height,topic.name,topic.width,topic.height);
         self.seeBigPictureButton.hidden = YES;
-        self.imageView.contentMode = UIViewContentModeScaleToFill;
+        self.imageView.contentMode = UIViewContentModeScaleAspectFit;
         self.imageView.clipsToBounds = NO;
     }
 }

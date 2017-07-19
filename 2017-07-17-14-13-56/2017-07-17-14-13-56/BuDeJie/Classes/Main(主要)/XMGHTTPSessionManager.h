@@ -10,4 +10,5 @@
 
 @interface XMGHTTPSessionManager : AFHTTPSessionManager
 
+
 @end

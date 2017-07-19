@@ -44,9 +44,9 @@ typedef NS_ENUM(NSUInteger, XMGTopicType) {
 @property (nonatomic, assign) NSInteger type;
 
 /** 宽度(像素) */
-@property (nonatomic, assign) NSInteger width;
+@property (nonatomic, assign) CGFloat width;
 /** 高度(像素) */
-@property (nonatomic, assign) NSInteger height;
+@property (nonatomic, assign) CGFloat height;
 
 /** 最热评论 */
 @property (nonatomic, strong) NSArray *top_cmt;
